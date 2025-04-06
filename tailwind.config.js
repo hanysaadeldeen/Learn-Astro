@@ -2,7 +2,11 @@
 export default {
   content: ["./src/**/*.{astro,html,js,jsx,ts,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: "#134E4A",
+      },
+    },
   },
   plugins: [],
 };

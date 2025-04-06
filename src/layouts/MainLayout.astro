@@ -1,38 +1,80 @@
 ---
 import "../styles/global.css";
-import Header from "../components/Header"
+import Header from "../components/Header";
 
 // interface Props{
 // 	title:string
 // }
 
-const title=Astro.props
+const title = Astro.props;
 console.log(title);
 
-console.log("hello therer")
-
+console.log("hello therer");
 ---
+
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title.title}</title>
-	</head>
-	<body>
-		<Header/>
-		<slot />
-	</body>
-</html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
-<style>
-	html,
-	body {
-		margin: 0;
-		padding: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+    <!-- تحسينات الـ SEO -->
+    <meta name="robots" content="index, follow" />
+    <meta name="description" content="This Website for learning" />
+    <link rel="canonical" href="https://example.com/" />
+
+    <!-- Open Graph Tags (لتحسين المشاركة على Facebook) -->
+    <meta property="og:title" content="This Website for Learning" />
+    <meta
+      property="og:description"
+      content="Learn new skills with our platform."
+    />
+    <meta property="og:image" content="https://example.com/og-image.jpg" />
+    <meta property="og:url" content="https://example.com/" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="This Website for Learning" />
+    <meta
+      name="twitter:description"
+      content="Learn new skills with our platform."
+    />
+    <meta
+      name="twitter:image"
+      content="https://example.com/twitter-image.jpg"
+    />
+
+    <!-- تحسين تحميل الخطوط -->
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&display=swap"
+      as="style"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- العنوان (تأكد من تمريره بشكل صحيح داخل .astro) -->
+    <title>{title}</title>
+  </head>
+
+  <!-- google fonts  Cabin-->
+
+  <body>
+    <Header />
+    <slot />
+  </body>
+
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</html>

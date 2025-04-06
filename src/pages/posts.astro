@@ -1,11 +1,20 @@
 ---
 import Post from "../components/posts/post";
 import MainLayout from "../layouts/MainLayout.astro";
+import { ClientRouter } from "astro:transitions";
 ---
 
-<MainLayout title="Posts">
-  <div class="h-screen w-full bg-white text-black">
-    <h1>Posts</h1>
-  </div>
-  <Post post="this is me" client:load />
-</MainLayout>
+<html lang="en">
+  <head>
+    <title>My Homepage</title>
+    <ClientRouter />
+  </head>
+  <body>
+    <MainLayout title="Posts">
+      <div class="h-screen w-full bg-white text-black">
+        <h1>Posts</h1>
+      </div>
+      <Post post="this is me" client:load />
+    </MainLayout>
+  </body>
+</html>
